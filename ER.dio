@@ -61,9 +61,9 @@
                 <mxCell id="51" value="birthday" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontColor=#393C56;" vertex="1" parent="6">
                     <mxGeometry y="236" width="160" height="34" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;endSize=20;startSize=20;labelBackgroundColor=#F4F1DE;strokeColor=#E07A5F;fontColor=#393C56;entryX=0.388;entryY=1.118;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="20">
+                <mxCell id="44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;endSize=20;startSize=20;labelBackgroundColor=#F4F1DE;strokeColor=#E07A5F;fontColor=#393C56;" edge="1" parent="1" source="20">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="382.0799999999999" y="374.01199999999994" as="targetPoint"/>
+                        <mxPoint x="382" y="340" as="targetPoint"/>
                         <Array as="points">
                             <mxPoint x="160" y="420"/>
                             <mxPoint x="382" y="420"/>
