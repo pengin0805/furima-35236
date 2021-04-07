@@ -22,13 +22,13 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | image            | text       | null: false                    |
-| item-name        | string     | null: false                    |
-| item-info        | text       | null: false                    |
+| item_name        | string     | null: false                    |
+| item_info        | text       | null: false                    |
 | category         | string     | null: false                    |
 | condition        | string     | null: false                    |
-| shipping-fee     | string     | null: false                    | 
-| shipping-area    | string     | null: false                    |
-| shipping-day     | string     | null: false                    |
+| shipping_fee     | string     | null: false                    | 
+| shipping_area    | string     | null: false                    |
+| shipping_day     | string     | null: false                    |
 | price            | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | order            | references | null: false, foreign_key: true |
