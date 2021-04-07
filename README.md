@@ -41,10 +41,6 @@
 ## orders テーブル
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
-| credit-number         | string     | null: false                    |
-| credit-exp-month      | string     | null: false                    |
-| credit-exp-year       | string     | null: false                    |
-| credit-cvc            | string     | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
