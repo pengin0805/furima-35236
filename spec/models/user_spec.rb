@@ -5,8 +5,19 @@ RSpec.describe User, type: :model do
     @user = FactoryBot.build(:user)
   end
 
-  describe '新規登録' do
-    context 'ユーザーの新規登録できないとき' do
+  describe 'ユーザー新規登録' do
+    context 'ユーザー新規登録ができる時' do
+      it 'nickname,email,password,password_confirmation,last_name,first_name,last_name_kana,first_name_kana,birthdayが存在すれば登録が可能なこと' do
+        expect(@user).to be_valid
+      end
+      it 'passwordは半角英数字が混合で6文字以上であれば登録できる' do
+        @user.password = 'a1111a'
+        @user.password_confirmation = 'a1111a'
+        expect(@user).to be_valid
+      end
+    end
+
+    context 'ユーザー新規登録ができないとき' do
       it 'nicknameが空では登録できない' do
         @user.nickname = ''
         @user.valid?
@@ -39,8 +50,20 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
       end
-      it 'passwordは半角英数字が混合されていれば登録が可能なこと' do
-        expect(@user).to be_valid
+      it 'passwordが半角英語のみでは登録できない' do
+        @user.password = 'aaaaaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Password は半角英数字混合であること'
+      end
+      it 'passwordが数字のみでは登録できない' do
+        @user.password = '111111'
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Password は半角英数字混合であること'
+      end
+      it 'passwordが全角英数混合では登録できない' do
+        @user.password = 'ａ１１１１ａ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Password は半角英数字混合であること'
       end
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
         @user.password = 'a1111a'
@@ -54,9 +77,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
       end
-    end
-
-    context 'ユーザーの新規登録できないとき' do
       it 'last_nameが空と登録できない' do
         @user.last_name = ''
         @user.valid?
