@@ -11,7 +11,7 @@ class OrderAddress
     validates :phone_number, format: {with: /\A\d{,11}\z/}
     validates :token
   end
-  validates :metropolis_id, numericality: {other_than: 0, message: "can't be blank"}
+  validates :metropolis_id, numericality: {other_than: 1, message: "can't be blank"}
 
   def save
     order = Order.create(item_id: item_id, user_id: user_id)

@@ -66,7 +66,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Phone number is invalid")
       end
       it 'metropolis_idを選択していないと登録できない' do
-        @order_address.metropolis_id = 0
+        @order_address.metropolis_id = 1
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Metropolis can't be blank")
       end
