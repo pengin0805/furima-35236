@@ -1,7 +1,7 @@
 const { formDisableSelector } = require("@rails/ujs");
 
 const pay = () => {
-  Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY2);
+  Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
   const form = document.getElementById("charge-form");
   form.addEventListener("submit", (e) => {
       e.preventDefault();
