@@ -35,7 +35,7 @@ class Item < ApplicationRecord
     if search != ""
       Item.where('item_name LIKE(?)', "%#{search}%")
     else
-      Item.all
+      Item.includes(:user).order('created_at DESC')
     end
   end
 
