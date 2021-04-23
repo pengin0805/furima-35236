@@ -30,4 +30,13 @@ class Item < ApplicationRecord
   def attached?
     image.attached?
   end
+
+  def self.search(search)
+    if search != ""
+      Item.where('item_name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end
